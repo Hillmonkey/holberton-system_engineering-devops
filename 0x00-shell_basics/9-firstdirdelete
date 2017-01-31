@@ -1,2 +1,0 @@
-!#/bin/bash
-rmdir --ingore-fail-on-non-empty /tmp/holberton
