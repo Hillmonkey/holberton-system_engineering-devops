@@ -1,0 +1,2 @@
+#!/bin/bash
+ls -lt --format=single-column | head -10
