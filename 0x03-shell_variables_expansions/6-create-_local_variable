@@ -1,6 +1,2 @@
 #!/bin/bash
-func ()
-{
-  local BETTY=holberton
-}
-func
+BETTY="Holberton"
