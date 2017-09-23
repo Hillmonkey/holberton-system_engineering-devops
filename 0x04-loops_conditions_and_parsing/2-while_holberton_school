@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# this script prints a string 10 times
+i="0"
+while [ $i -lt 10 ]; do
+	echo "Holberton School"
+	i=$((i+2))
+done

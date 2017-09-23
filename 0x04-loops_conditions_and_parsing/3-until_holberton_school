@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# this script prints a string 10 times
+i="10"
+until [ $i -le 0 ]; do
+	echo "Holberton School"
+	let i-=1
+done
