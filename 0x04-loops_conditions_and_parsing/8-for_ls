@@ -2,7 +2,5 @@
 #print contents of cwd, cut after first dash
 for f in *
 do
-
-	# echo "$(echo "$f" | cut -d'-' -f1 --complement)"
-	echo "$f" | cut -d'-' -f1 --complement
+	echo "$f" | cut -d'-' -f2
 done
