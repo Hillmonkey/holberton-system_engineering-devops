@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# this file prints out the (parsed) contents of the /etc/passwd file
+while read line; do
+	USERNAME=$(echo "$line" | cut -d: -f1)
+	GROUP_ID=$(echo "$line" | cut -d: -f4)
+	HOME_DIR=$(echo "$line" | cut -d: -f6)
+	CMD_SHL=$(echo "$line" | cut -d: -f7)
+	USER_ID=$(echo "$line" | cut -d: -f3)
+	PASSWD=$(echo "$line" | cut -d: -f2)
+	USER_ID_INFO=$(echo "$line" | cut -d: -f5)
+	printf "The user %s is par of the %s gang, " "$USERNAME" "$GROUP_ID"
+	printf "lives in %s " "$HOME_DIR"
+	printf "and rides %s. %d's place is protected by " "$CMD_SHL" "$USER_ID"
+	printf "the passcode %s, more info about the user" "$PASSWD"
+	printf " here: %s\n" "$USER_ID_INFO"
+done < /etc/passwd
