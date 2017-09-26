@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# this script extracts the following information from an apache log file:
+# 1) IP address, 2) HTTP status code
+awk '{print $1 "\t" $9}' apache-access.log
