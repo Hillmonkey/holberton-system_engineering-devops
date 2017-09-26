@@ -8,7 +8,7 @@ while read line; do
 	USER_ID=$(echo "$line" | cut -d: -f3)
 	PASSWD=$(echo "$line" | cut -d: -f2)
 	USER_ID_INFO=$(echo "$line" | cut -d: -f5)
-	printf "The user %s is par of the %s gang, " "$USERNAME" "$GROUP_ID"
+	printf "The user %s is part of the %s gang, " "$USERNAME" "$GROUP_ID"
 	printf "lives in %s " "$HOME_DIR"
 	printf "and rides %s. %d's place is protected by " "$CMD_SHL" "$USER_ID"
 	printf "the passcode %s, more info about the user" "$PASSWD"
