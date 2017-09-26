@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# this script prints a string and avoids being killed
+function lol {
+	# don't dies print this instead:
+	printf "I am invincible!\n"
+}
+trap lol SIGTERM SIGINT
+while true; do
+	printf "To infinity and beyond\n"
+	sleep 2s
+done
