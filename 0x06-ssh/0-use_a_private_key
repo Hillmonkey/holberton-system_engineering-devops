@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+# login like a baddog
+ssh -i ~/.ssh/id_rsa/holberton ubuntu@142.44.167.249
