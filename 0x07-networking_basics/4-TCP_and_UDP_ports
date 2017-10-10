@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# list active TCP & UDP ports
+netstat --listen
