@@ -1,1 +1,2 @@
-sudo service apache2 start
+sudo docker exec -it 137ab8751169 sudo apt-get update && sudo apt-get install apache2 apache2-doc apache2-utils
+sudo docker exec -it 137ab8751169 sudo service apache2 restart
