@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#this script rules the world!
+sudo -y apt-get install nginx-full
+sudo service nginx start
+echo "Holberton School" | sudo tee /usr/share/nginx/html/index.html
