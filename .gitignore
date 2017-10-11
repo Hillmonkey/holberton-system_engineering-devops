@@ -1,1 +1,4 @@
 0x06-ssh/holberton*
+*.swp
+*.swo
+test.txt
