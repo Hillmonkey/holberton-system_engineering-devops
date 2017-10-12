@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
-sudo docker exec -it 137ab8751169 sudo apt-get update && sudo apt-get install apache2 apache2-doc apache2-utils
-sudo docker exec -it 137ab8751169 sudo service apache2 restart
-sudo docker exec -it 137ab8751169 echo "Hello Holberton" > /var/www/html/index.html
+# This command was used to fix a non-functioning web-server
+sudo service apache2 restart
