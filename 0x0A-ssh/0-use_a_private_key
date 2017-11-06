@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# login like a bad dog
+ssh -i ~/.ssh/holberton ubuntu@142.44.167.249
