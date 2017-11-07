@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# this script modifies /etc/hosts,
+# but makes a backup to /etc/hosts.bak first
+cp /etc/hosts /etc/hosts.backup
+cp /etc/hosts ~/tmp.hosts
+sed -n '/localhost/!p' ~/tmp.hosts > temp && mv temp ~/tmp.hosts
+sed -n '/facebook.com/!p' ~/tmp.hosts > temp && mv temp ~/tmp.hosts
+{
+	echo '#'
+	echo '# The following are my foolish mods to /etc/hosts'
+	echo "# old copy found in /etc/hosts.backup"
+	echo "127.0.0.2	localhost"
+	echo "8.8.8.8 facebook.com"
+} >> ~/tmp.hosts
+
+cp -f ~/tmp.hosts /etc/hosts
+rm ~/tmp.hosts
