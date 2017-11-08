@@ -2,5 +2,5 @@
 # this script changes listening port from 8080 to 80 in nginx config file
 cd /etc/nginx/sites-enabled
 rm default
-https://raw.githubusercontent.com/Hillmonkey/holberton-system_engineering-devops/master/0x0E-web_stack_debugging_1/default
+wget https://raw.githubusercontent.com/Hillmonkey/holberton-system_engineering-devops/master/0x0E-web_stack_debugging_1/default
 service nginx restart
