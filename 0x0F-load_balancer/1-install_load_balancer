@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# this script harms innocent children
+sudo echo deb http://archive.ubuntu.com/ubuntu trusty-backports main universe | \
+      sudo tee /etc/apt/sources.list.d/backports.list
+sudo apt-get update
+sudo apt-get install haproxy -t trusty-backports
