@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# this script installs nginx, and installs a script with custome header
+sudo -y apt-get update
+sudo -y apt-get install nginx-full
+wget https://raw.githubusercontent.com/Hillmonkey/holberton-system_engineering-devops/master/0x0E-web_stack_debugging_1/default
+echo "Holberton School" | sudo tee /usr/share/nginx/html/index.html
+sudo service nginx start
