@@ -3,6 +3,7 @@
 sudo -y apt-get update
 sudo -y apt-get install nginx-full
 sudo cd /etc/nginx
+sudo touch foobar-beyond-control
 sudo rm nginx.conf
 sudo wget https://raw.githubusercontent.com/Hillmonkey/holberton-system_engineering-devops/master/0x0F-load_balancer/nginx.conf
 sudo service nginx restart
