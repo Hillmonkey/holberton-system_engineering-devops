@@ -5,3 +5,7 @@ sudo echo deb http://archive.ubuntu.com/ubuntu trusty-backports main universe | 
 sudo apt-get update
 sudo apt-get install haproxy -t trusty-backports
 sudo echo ENABLED=1 >> /etc/default/haproxy
+sudo cd /etc/default/
+sudo rm /etc/default/haproxy.cfg
+sudo wget https://raw.githubusercontent.com/Hillmonkey/holberton-system_engineering-devops/master/0x0F-load_balancer/haproxy.cfg
+sudo cp haproxy.cfg /etc/default/haproxy.cfg
