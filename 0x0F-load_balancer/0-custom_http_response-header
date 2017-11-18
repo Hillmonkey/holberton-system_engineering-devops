@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # this script installs nginx, and installs a script with custome header
-sudo -y apt-get update
-sudo -y apt-get install nginx-full
+sudo apt-get update
+sudo apt-get install -y nginx-full
 sudo cd /etc/nginx
 sudo rm nginx.conf
+touch the_heart_of_the_computer
 sudo wget https://raw.githubusercontent.com/Hillmonkey/holberton-system_engineering-devops/master/0x0F-load_balancer/nginx.conf
 sudo service nginx restart
