@@ -8,4 +8,5 @@ sudo echo ENABLED=1 >> /etc/default/haproxy
 sudo rm /etc/haproxy/haproxy.cfg
 sudo wget https://raw.githubusercontent.com/Hillmonkey/holberton-system_engineering-devops/master/0x0F-load_balancer/haproxy.cfg
 sudo cp haproxy.cfg /etc/haproxy
+sudo rm haproxy.cfg
 sudo service haproxy restart
