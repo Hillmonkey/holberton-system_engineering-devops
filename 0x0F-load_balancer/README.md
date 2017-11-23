@@ -1,4 +1,4 @@
-# 0x0E. Sysadmin/Devops - Load Balancers
+# 0x0F. Sysadmin/Devops - Load Balancers
 
 ### Learning to code with [Larry Madeo](https://twitter.com/larmalade)
 
