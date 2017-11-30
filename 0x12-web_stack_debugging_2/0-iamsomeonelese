@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# this script accepts a username as an arg
+sudo --user "$1" whoami
+exit
