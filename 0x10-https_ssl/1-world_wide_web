@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# shellcheck disable=SC2086
+# print DNS records based on command line input
+# arg1 = domain name
+# arg2 = subdomain name
+# do extra comment lines make the checker unhappy???
+
+print_DNS ()
+{
+	dig "$2.$1" | awk '/ANSWER SECTION:/{getline; printf "The subdomain %s is a %s record and points to %s\n", subdomain, $4, $5}' subdomain="$2"
+}
+
+if [ -z "$2" ]
+then
+	for subdomain in "www" "lb-01" "web-01" "web-02"
+	do
+		print_DNS "$1" "$subdomain"
+    done
+else
+	print_DNS "$1" "$2"
+fi
+
