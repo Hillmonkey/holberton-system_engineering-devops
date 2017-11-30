@@ -1,0 +1,52 @@
+global
+        log /dev/log   local0
+        log 127.0.0.1   local1 notice
+        maxconn 4096
+	tune.ssl.default-dh-param 4096
+        user haproxy
+        group haproxy
+        daemon
+
+defaults
+        option forwardfor
+        option http-server-close
+        log     global
+        mode    http
+        option  httplog
+        option  dontlognull
+        retries 3
+        option redispatch
+        maxconn 4096
+        timeout connect     5000
+        timeout client    50000
+        timeout server    50000
+
+listen webfarm 0.0.0.0:80
+        mode http
+        stats enable
+        stats uri /haproxy?stats
+        balance roundrobin
+        option httpclose
+        option forwardfor
+        server webserver01 142.44.167.249:80 check
+        server webserver02 144.217.246.226:80 check
+
+frontend www-http
+        bind 144.217.246.148:80
+        reqadd X-Forwarded-Proto:\ http
+        default_backend www-backend        
+
+frontend www-https
+        bind 144.217.246.148:443 ssl crt /etc/haproxy/certs/www.larmalade.online.pem
+        reqadd X-Forwarded-Proto:\ https
+        acl letsencrypt-acl path_beg /.well-known/acme-challenge/
+        use_backend letsencrypt-backend if letsencrypt-acl
+        default_backend www-backend
+
+backend www-backend
+        redirect scheme https if !{ ssl_fc }
+        server www-1 142.44.167.249:80 check
+        server www-2 144.217.246.226:80 check
+
+backend letsencrypt-backend
+        server letsencrypt 127.0.0.1:54321
