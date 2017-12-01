@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# this script kills apache2, then switches listening port to 8080, user=nginx
+pkill -u root apache2
+wget https://raw.githubusercontent.com/Hillmonkey/holberton-system_engineering-devops/master/0x0E-web_stack_debugging_1/default
+mv default /etc/nginx/sites-available/default
+service nginx restart
