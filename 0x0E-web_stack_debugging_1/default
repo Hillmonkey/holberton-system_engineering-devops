@@ -1,3 +1,4 @@
+# this script is for listening at port 80, so that nginx can run non-root
 server {
         listen 80 default_server;
         listen [::]:80 default_server ipv6only=on;
