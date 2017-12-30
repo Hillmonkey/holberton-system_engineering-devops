@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# this script creates a compressed backup of a mysql database
+# accepts one command line arg: mysql password for user (root)
+stamp=$(date +"%m-%d-%Y")
+mysqldump --user=root --password="$1" --all-databases > backup.sql
+tar -czf "$stamp".tar.gz backup.sql
