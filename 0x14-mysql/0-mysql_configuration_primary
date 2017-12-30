@@ -33,4 +33,5 @@ symbolic-links=0
 # bind-address = 10.0.0.156
 server-id = 1
 log_bin = /var/log/mysql/mysql-bin.log
+binlog-do-db	= holberton
 binlog-do-db	= dud
