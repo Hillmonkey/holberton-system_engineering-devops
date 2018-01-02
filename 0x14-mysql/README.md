@@ -1,2 +1,7 @@
-This is where I learn how to configure two databases, one as master, the
-other as replica ...
+# 0x14. Sysadmin/Devops - MySQL 
+
+### Learning to code with [Larry Madeo](https://twitter.com/larmalade)
+
+### [Holberton School](https://www.holbertonschool.com) assignment solutions - December, 2017
+
+MySQL dB Replication
