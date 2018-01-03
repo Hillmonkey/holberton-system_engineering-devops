@@ -14,7 +14,6 @@ if __name__ == '__main__':
     id_str = sys.argv[1]
     user_id = int(id_str)
     user = requests.get(root + "/users?userId=" + id_str).json()
-    employee_name = user[0].get('name')
     user_name = user[0].get('username')
 
     todo_list = requests.get(root + "/todos?userId=" + id_str).json()
