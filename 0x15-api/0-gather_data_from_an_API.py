@@ -25,4 +25,4 @@ if __name__ == '__main__':
           completed_todos, total_todos))
     for task in todo_list:
         if task.get('completed'):
-            print(task['title'])
+            print("\t " + task['title'])
