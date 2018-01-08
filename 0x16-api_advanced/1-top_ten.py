@@ -15,12 +15,15 @@ def top_ten(subreddit):
     headers = {"User-Agent":  "larry-agent"}
     r = requests.get(url, headers=headers)
     posts = r.json().get("data").get("children")
-
+    no_redirect = (r.status_code == 200)
     try:
-        for counter, post in enumerate(posts):
-            if counter < 10:
-                print(post.get("data").get("title"))
-            else:
-                break
+        if no_redirect:  # don't chase redirect from bad subreddit
+            for counter, post in enumerate(posts):
+                if counter < 10:
+                    print(post.get("data").get("title"))
+                else:
+                    break
+        else:
+            print("None")
     except AttributeError:  # this handles 404 error
         print("None")
