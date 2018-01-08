@@ -24,7 +24,7 @@ def top_ten(subreddit):
                     print(post.get("data").get("title"))
                 else:
                     break
-        else: # don't print empty list or list redirected to diff subreddit
+        else:  # don't print empty list or list redirected to diff subreddit
             print("None")
     except AttributeError:  # this handles 404 error
         print("None")
