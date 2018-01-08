@@ -2,7 +2,6 @@
 '''module: 0-subs
 '''
 
-import pprint
 import requests
 
 
@@ -15,7 +14,11 @@ def number_of_subscribers(subreddit):
     url = "https://reddit.com/r/" + subreddit + "/about/.json"
     headers = {"User-Agent":  "larry-agent"}
     r = requests.get(url, headers=headers)
+    print(r.json())
 
-    subs = r.json().get("data").get("subscribers")
-    subscribers = subs if subs is not None else 0
-    return(subscribers)
+    try:
+        subs = r.json().get("data").get("subscribers")
+        subscribers = subs if subs is not None else 0
+        return(subscribers)
+    except AttributeError:  # this handles 404 error
+        return(0)
