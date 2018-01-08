@@ -15,15 +15,16 @@ def top_ten(subreddit):
     headers = {"User-Agent":  "larry-agent"}
     r = requests.get(url, headers=headers)
     posts = r.json().get("data").get("children")
-    no_redirect = (r.status_code == 200)
+
     try:
-        if no_redirect:  # don't chase redirect from bad subreddit
+        actual_subreddit = posts[0].get('data').get('subreddit').lower()
+        if len(posts) > 0 and actual_subreddit == subreddit.lower():
             for counter, post in enumerate(posts):
                 if counter < 10:
                     print(post.get("data").get("title"))
                 else:
                     break
-        else:
+        else: # don't print empty list or list redirected to diff subreddit
             print("None")
     except AttributeError:  # this handles 404 error
         print("None")
