@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''module: 0-top_ten
+'''module: 1-top_ten
 '''
 
 import requests
