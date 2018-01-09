@@ -1,4 +1,4 @@
-#!/usr/bin/python4
+#!/usr/bin/python3
 '''module: 100-count
 '''
 
