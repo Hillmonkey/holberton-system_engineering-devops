@@ -18,6 +18,7 @@ def tally(titles, word_dict={}):
     # print(word_dict)
     return word_dict
 
+
 def count_words(subreddit, word_list, counter=0, word_dict={}, after=None):
     '''count_words: hit reddit api and track the frequency of keywords in the
     word list
