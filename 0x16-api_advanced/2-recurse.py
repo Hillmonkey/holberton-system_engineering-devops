@@ -18,7 +18,6 @@ def recurse(subreddit, hot_list=[], counter=0, after=None):
     payload = {} if counter == 0 else {'after': after, 'count': 25}
 
     url = "https://reddit.com/r/" + subreddit + "/hot/.json"
-    payload = {'after': after, 'count': 25}
     r = requests.get(url, headers=headers, params=payload)
     ps = r.json().get("data").get("children")
     posts = [post.get("data").get("title") for post in ps]
