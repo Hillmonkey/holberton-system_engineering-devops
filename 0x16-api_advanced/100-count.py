@@ -5,22 +5,23 @@
 import requests
 
 
+def tally(titles, word_dict={}):
+    '''tally: in a list of titles, increment the count of word occurences
+    in the word_dict
+    return: updated word_dict'''
+    for title in titles:
+        words = title.split(" ")
+        for word in words:
+            for target in word_dict:
+                if word.lower() == target.lower():
+                    word_dict[target] += 1
+    # print(word_dict)
+    return word_dict
+
 def count_words(subreddit, word_list, counter=0, word_dict={}, after=None):
     '''count_words: hit reddit api and track the frequency of keywords in the
     word list
     '''
-    def tally(titles, word_dict={}):
-        '''tally: in a list of titles, increment the count of word occurences
-        in the word_dict
-        return: updated word_dict'''
-        for title in titles:
-            words = title.split(" ")
-            for word in words:
-                for target in word_dict:
-                    if word.lower() == target.lower():
-                        word_dict[target] += 1
-        # print(word_dict)
-        return word_dict
 
     # print("counter: {}".format(counter))
     # exit case
