@@ -11,11 +11,8 @@ def recurse(subreddit, hot_list=[], counter=0, after=None):
     '''
 
     if counter != 0 and after is None:
-        print("FINAL")
-        print(len(hot_list))
         return(hot_list)
 
-    print(counter)
     headers = {"User-Agent": "larry-agent"}
 
     payload = {} if counter == 0 else {'after': after, 'count': 25}
