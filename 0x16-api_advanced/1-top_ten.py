@@ -26,5 +26,5 @@ def top_ten(subreddit):
                     break
         else:  # don't print empty list or list redirected to diff subreddit
             print("None")
-    except AttributeError:  # this handles 404 error
+    except:  # this handles 404 error
         print("None")
